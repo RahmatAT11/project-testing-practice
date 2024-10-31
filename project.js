@@ -22,15 +22,35 @@ function capitalize(...str) {
 
 function reverseString(...str) {
   if (str.length === 1) {
-    return str[0].split('').reverse().join('');
+    return str[0].split("").reverse().join("");
   } else {
     let arrOfReverse = [];
     str.forEach((value) => {
-      arrOfReverse.push(value.split('').reverse().join(''));
+      arrOfReverse.push(value.split("").reverse().join(""));
     });
 
     return arrOfReverse;
   }
 }
 
-module.exports = { capitalize, reverseString };
+const calculator = () => {
+  const add = (a, b) => {
+    return a + b;
+  }
+
+  const subtract = (a, b) => {
+    return a - b;
+  }
+
+  const divide = (a, b) => {
+    return Math.floor(a / b);
+  }
+
+  const multiply = (a, b) => {
+    return Math.floor(a * b);
+  }
+
+  return { add, subtract, divide, multiply };
+};
+
+module.exports = { capitalize, reverseString, calculator };
