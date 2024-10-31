@@ -20,4 +20,17 @@ function capitalize(...str) {
   }
 }
 
-module.exports = { capitalize };
+function reverseString(...str) {
+  if (str.length === 1) {
+    return str[0].split('').reverse().join('');
+  } else {
+    let arrOfReverse = [];
+    str.forEach((value) => {
+      arrOfReverse.push(value.split('').reverse().join(''));
+    });
+
+    return arrOfReverse;
+  }
+}
+
+module.exports = { capitalize, reverseString };
