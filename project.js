@@ -33,24 +33,28 @@ function reverseString(...str) {
   }
 }
 
-const calculator = () => {
-  const add = (a, b) => {
+const calculator = {
+  add: (a, b) => {
     return a + b;
-  }
+  },
 
-  const subtract = (a, b) => {
+  subtract: (a, b) => {
     return a - b;
-  }
+  },
 
-  const divide = (a, b) => {
+  divide: (a, b) => {
     return Math.floor(a / b);
-  }
+  },
 
-  const multiply = (a, b) => {
+  multiply: (a, b) => {
     return Math.floor(a * b);
-  }
-
-  return { add, subtract, divide, multiply };
+  },
 };
 
-module.exports = { capitalize, reverseString, calculator };
+module.exports = {
+  capitalize,
+  reverseString,
+  get Calculator() {
+    return calculator;
+  },
+};

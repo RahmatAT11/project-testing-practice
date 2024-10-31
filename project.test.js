@@ -1,4 +1,5 @@
 import project from "./project";
+import { Calculator } from "./project";
 
 test("Capitalize a string", () => {
   expect(project.capitalize("rahmat")).toEqual("Rahmat");
@@ -21,8 +22,8 @@ test("Reverse a string", () => {
 });
 
 test("Test calculator's basic functionality", () => {
-    expect(project.calculator.add(2, 2)).toBe(4);
-    expect(project.calculator.subtract(2, 2)).toBe(0);
-    expect(project.calculator.divide(2, 2)).toBe(1);
-    expect(project.calculator.multiply(2, 2)).toBe(4);
+    expect(Calculator.add(2, 2)).toBe(4);
+    expect(Calculator.subtract(2, 2)).toBe(0);
+    expect(Calculator.divide(2, 2)).toBe(1);
+    expect(Calculator.multiply(2, 2)).toBe(4);
 });
