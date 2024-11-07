@@ -88,6 +88,17 @@ const caesarCipher = (str, move = 0) => {
   return cipher;
 };
 
+const analyzeArray = (arr) => {
+  const analyzeArrayObj = {};
+
+  analyzeArrayObj.length = arr.length;
+  analyzeArrayObj.average = arr.reduce((total, value, index) => total + value) / arr.length;
+  analyzeArrayObj.min = Math.min.apply(null, arr);
+  analyzeArrayObj.max = Math.max.apply(null, arr);
+
+  return analyzeArrayObj;
+};
+
 module.exports = {
   capitalize,
   reverseString,
@@ -95,4 +106,5 @@ module.exports = {
     return calculator;
   },
   caesarCipher,
+  analyzeArray,
 };

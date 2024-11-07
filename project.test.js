@@ -22,13 +22,22 @@ test("Reverse a string", () => {
 });
 
 test("Test calculator's basic functionality", () => {
-    expect(Calculator.add(2, 2)).toBe(4);
-    expect(Calculator.subtract(2, 2)).toBe(0);
-    expect(Calculator.divide(2, 2)).toBe(1);
-    expect(Calculator.multiply(2, 2)).toBe(4);
+  expect(Calculator.add(2, 2)).toBe(4);
+  expect(Calculator.subtract(2, 2)).toBe(0);
+  expect(Calculator.divide(2, 2)).toBe(1);
+  expect(Calculator.multiply(2, 2)).toBe(4);
 });
 
 test("Test Caesar's cipher", () => {
-  expect(project.caesarCipher('xyz', 3)).toEqual('abc');
-  expect(project.caesarCipher('abcd!!!!!, wxyz', 4)).toEqual('efgh!!!!!, abcd');
+  expect(project.caesarCipher("xyz", 3)).toEqual("abc");
+  expect(project.caesarCipher("abcd!!!!!, wxyz", 4)).toEqual("efgh!!!!!, abcd");
+});
+
+test("Test analyzeArray", () => {
+  expect(project.analyzeArray([1, 8, 3, 4, 2, 6])).toEqual({
+    average: 4,
+    min: 1,
+    max: 8,
+    length: 6,
+  });
 });
