@@ -51,10 +51,48 @@ const calculator = {
   },
 };
 
+const caesarCipher = (str, move = 0) => {
+  const upperLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+  const lowerLetters = "abcdefghijklmnopqrstuvwxyz".split("");
+  let cipher = "";
+
+  for (let i = 0; i < str.length; i++) {
+    const properIndex = (upperLetters.indexOf(str[i]) + move) % upperLetters.length;
+    if (upperLetters.includes(str[i])) {
+      const properIndex = lowerLetters.indexOf(str[i]) + move;
+      cipher += upperLetters.find((value, index) => {
+        const properIndex = (index + move) % upperLetters.length;
+        if (properIndex === index) {
+          return value;
+        }
+      });
+
+      continue;
+    }
+
+    if (lowerLetters.includes(str[i])) {
+      const properIndex = (lowerLetters.indexOf(str[i]) + move) % lowerLetters.length;
+      cipher += lowerLetters.find((value, index) => {
+        if (properIndex === index) {
+          return value;
+        }
+      });
+
+      continue;
+    }
+
+    if (!upperLetters.includes(str[i]) && !lowerLetters.includes(str[i])) {
+      cipher += str[i];
+    }
+  }
+  return cipher;
+};
+
 module.exports = {
   capitalize,
   reverseString,
   get Calculator() {
     return calculator;
   },
+  caesarCipher,
 };

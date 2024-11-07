@@ -27,3 +27,8 @@ test("Test calculator's basic functionality", () => {
     expect(Calculator.divide(2, 2)).toBe(1);
     expect(Calculator.multiply(2, 2)).toBe(4);
 });
+
+test("Test Caesar's cipher", () => {
+  expect(project.caesarCipher('xyz', 3)).toEqual('abc');
+  expect(project.caesarCipher('abcd!!!!!, wxyz', 4)).toEqual('efgh!!!!!, abcd');
+});
